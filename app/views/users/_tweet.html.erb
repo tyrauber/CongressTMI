@@ -1,0 +1,19 @@
+<%= form_for(@user) do |f| %>
+<% if @user.errors.any? %>
+   <div id="error_explanation">
+     <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+     <ul>
+     <% @user.errors.full_messages.each do |msg| %>
+       <li><%= msg %></li>
+     <% end %>
+     </ul>
+   </div>
+ <% end %>
+
+ <h2 style="padding-top: 20px;">Join The Twitter Campaign 
+   <%= select_tag "tweet_congress", " ".html_safe %>
+   <%image_tag('twitter.png')%></h2><%image_tag('twitter.png', :style=>"float: left; margin-right: 6px;") %>
+
+ <p>#CongressWantsMyData? <input value="I bought icecream for lunch today" name="I bought icecream for lunch today" placeholder="I bought icecream for lunch today" title="I bought icecream for lunch today" required="" id="I bought icecream for lunch today" class="twitter" style="float: none; display: inline; width: 180px;" type="text"> http://is.gd/ablasdfs NO #CISPA<%= f.submit :id=> "gotime", :value=> "Submit", :style=> "float: right;" %></p>
+<% end %>

@@ -1,0 +1,29 @@
+<h1>Listing users</h1>
+
+<table border="1" style="background-color: #333333; border: 1px solid #555555;">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Address</th>
+    <th>Zip</th>
+    <th>Text</th>
+    <th>Security Professional</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.name %></td>
+    <td><%= user.email %></td>
+    <td><%= user.address %></td>
+    <td><%= user.zip %></td>
+    <td><%= user.text %></td>
+    <td><%= user.security_professional %></td>
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>

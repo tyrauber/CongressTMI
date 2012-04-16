@@ -1,0 +1,37 @@
+  <%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+     <div id="error_explanation">
+       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+       <ul>
+       <% @user.errors.full_messages.each do |msg| %>
+         <li><%= msg %></li>
+       <% end %>
+       </ul>
+     </div>
+   <% end %>
+    <ul>
+      <li><%= f.text_field :name, :placeholder=> "Name", :style=> "width:220px" %></li>
+      <li><%= f.text_field :email, :placeholder=> "Email", :style=> "width:240px" %></li>
+      <li><%= f.text_field :address, :placeholder=> "Address", :style=> "width:280px" %></li>
+      <li><%= f.text_field :zip, :placeholder=> "Zip", :style=> "width:80px" %></li>
+    </ul>
+    <%= f.text_area :text, :value=> "[Insert personal detail here]
+
+    Was that too much information?  Well, with CISPA (the Rogers cybersecurity bill) it seems that Congress will let any company share all my personal data with any government agency, with no limits on how it can be used.  
+
+    Sharing my personal information will do nothing to make the internet more secure.  But if you insist on ending privacy, I figured I would start sharing my personal details with you and your staff, right now.
+
+    Too Much Information?  I agree.", :style=> "width:920px; height: 140px;" %>
+    <br style="clear:both">
+    <p style="width:920px">Handing government my personal data with no protections does nothing to make the Internet secure. Want to improve cybersecurity? Then why not consult actual security professionals?</p>
+
+    <div class="darker">
+      <p> <%= f.check_box :security_professional %> "I'm an Internet security professional, and I'd be happy to explain this. Just write back."</p>
+    </div>
+    <p class="smaller">Fight For The Future will deliver this email to your Congressperson via their contact form. We will contact you about future campaigns. <a href=" http://fightforthefuture.org/privacy/">Privacy Policy.</a></p>
+
+    <ul style="width:940px;">
+      <li><%= f.submit :id=> "gotime", :value=> "Submit", :style=> "float:right" %></li>
+    </ul>
+  <% end %>

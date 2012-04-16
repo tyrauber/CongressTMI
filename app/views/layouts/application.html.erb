@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stop Cyborg Security Week — a campaign from Fight for the Future</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+</head>
+<body>
+<div id="wrapper">
+  <div id="container">
+    <div id="header">
+      <ul class="menu">
+          <%= render 'devise/menus/registration_items' %>
+          <%= render 'devise/menus/login_items' %>
+      </ul>
+      <div class="wrap">
+        <%= link_to(image_tag("header.2.png"), "/")%>
+      </div>
+    </div>
+    <div class="wrap" id="intro">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+
+        <%= yield %>
+    </div>
+  </div>
+
+
+</div>
+</body>
+</html>

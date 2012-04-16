@@ -1,0 +1,29 @@
+development:
+  adapter: mysql
+  encoding: utf8
+  database: congresstmi_development
+  username: [user]
+  password: [password]
+  host: 127.0.0.1
+  #socket: /tmp/mysql.sock
+
+test:
+  adapter: mysql
+  encoding: utf8
+  database: congresstmi_test
+  username: [user]
+  password: [password]
+  # JRuby doesn't support socket:
+  host: 127.0.0.1
+  #socket: /tmp/mysql.sock
+
+production:
+  adapter: mysql
+  encoding: utf8
+  database: congresstmi_production
+  username: [user]
+  password: [password]
+  # JRuby doesn't support socket:
+  host: 127.0.0.1
+  #socket: /tmp/mysql.sock
+

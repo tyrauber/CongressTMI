@@ -1,0 +1,9 @@
+<h2>Sign in:</h2>
+<br/>
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+<ul>
+  <li><%= f.email_field :email %></li>
+  <li><%= f.password_field :password %></li>
+  <li><%= f.submit :id=> "gotime", :value=> "Sign-in" %></li>
+  </ul>
+<% end %>
